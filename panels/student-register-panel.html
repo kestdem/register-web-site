@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Öğrenci Kayıt</title>
+    <link rel="stylesheet" href="../css/student-register-panel.css">  
+</head>
+<body>
+    <div class="container">
+        <button id="backButton" onclick="goBack()" class="back-btn">&#8592;</button>
+        <div id="student-form" class="form-container">
+            <h2>Öğrenci Kayıt</h2>
+            <form id="registration-form">
+                <input type="text" id="student-name" placeholder="Öğrencinin Adı" required>
+                <input type="text" id="student-surname" placeholder="Öğrencinin Soyadı" required>
+                <div class="date-reg">
+                    <input type="text"  id="student-dob-1" placeholder="Doğum Tarihi" disabled>
+                    <input type="date" id="student-dob" required>            
+                </div>                     
+                <input type="text" id="mother-name" placeholder="Anne Adı" required>
+                <input type="text" id="father-name" placeholder="Baba Adı" required>
+                <input type="tel" id="mother-phone" placeholder="Anne Telefon Numarası" required>
+                <input type="tel" id="father-phone" placeholder="Baba Telefon Numarası" required>
+                <textarea id="student-address" placeholder="İkamet Adresi" required></textarea>
+                <div class="date-reg">
+                    <input type="text" id="registration-date-1"  placeholder="Kurs Kayıt Tarihi" disabled>
+                    <input type="date" id="registration-date" required>
+                </div>
+                <button type="submit">Kaydet</button>
+            </form>
+        </div>
+        
+    </div>
+    <script type="module" src="../js/register.js" ></script>
+
+</body>
+</html>

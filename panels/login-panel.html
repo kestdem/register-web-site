@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt ve Giriş Ekranı</title>
+    <link rel="stylesheet" href="../css/login-style.css">
+</head>
+<body>
+    <div class="container" >
+        <button id="backButton" onclick="goBack()" class="back-btn">&#8592;</button>
+        <h2>Giriş Yap</h2>
+        <form id="loginForm">
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Şifre" required>
+            <button type="submit">Giriş Yap</button>
+        </form>
+        <div class="switch" onclick="toggleForms()">Hesabınız yok mu? Kayıt olun</div>
+    </div>
+
+    <div class="container" style="display: none;">
+        <button id="backButton" onclick="goBack()" class="back-btn">&#8592;</button>
+        <h2>Kayıt Ol</h2>
+        <form id="registerForm">
+            <input type="email" id="registerEmail" placeholder="Email" required>
+            <input type="password" id="registerPassword" placeholder="Şifre" required>
+            <button type="submit">Kayıt Ol</button>
+        </form>
+        <div class="switch" onclick="toggleForms()">Zaten hesabınız var mı? Giriş yapın</div>
+    </div>
+    <script type="module" src="../js/login-script.js"></script>
+</body>
+</html>

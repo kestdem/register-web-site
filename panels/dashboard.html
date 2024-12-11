@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yönetim Paneli</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Yönetim Paneli</h2>
+        <ul>
+            <li><a href="#" onclick="loadStudent()">Öğrenciler</a></li>
+            <li><a href="#" onclick="loadUser()">Kullanıcılar</a></li>
+            <li><a href="#" onclick="loginClass()" >Sınıflar</a></li>
+            <li><a href="#" onclick="logout()">Çıkış</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div id="student-dashboard"class="hidden">
+            <table >
+                <thead>
+                    <tr>
+                        <th>Seçim</th>
+                        <th>Sıra No</th>
+                        <th>Ad</th>
+                        <th>Soyadı</th>
+                        <th>Doğum Trh.</th>
+                        <th>Anne Adı</th>
+                        <th>Baba Adı</th>
+                        <th>Anne Tel</th>
+                        <th>Baba Tel</th>
+                        <th>İkamet Adresi</th>
+                        <th>Kayıt Tarihi</th>
+                        <th>Düzenleme</th>                                 
+                    </tr>
+                </thead>
+                <tbody id="students-table-body" ></tbody>
+            </table>
+            <button  id="create-class-btn" onclick="createClass()">Sınıf Oluştur</button>
+        </div>
+
+        <div id="class-dashboard" class="hidden">                 
+            <div id="class-container" ></div>
+        </div>
+
+        <div id="user-dashboard" class="hidden">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Kullanıcı mail adresi</th>
+                        <th>Kullanıcı onay durumu</th>
+                        <th>Düzenleme</th>
+                    </tr>
+                </thead>
+                <tbody id="users-table-body"></tbody>
+            </table>
+
+        </div>
+        
+        
+
+    </div>
+    <script type="module" src="../js/dashbard.js"></script>
+</body>
+</html>

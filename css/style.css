@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+.container {
+    width: 300px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    display: block;
+    overflow-x:auto; /* Yatay kaydırma ekle */
+    white-space: nowrap;
+}
+
+
+
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+body {
+    font-size: 14px; /* Mobilde yazı boyutunu küçült */
+    line-height: 1.4; /* Satır aralığını sıklaştır */
+    padding: 20px;
+}
+
+.container {
+    padding: 10px;
+    margin: 0;
+    box-shadow: none; /* Gölgeyi kaldır */
+}
+
+input, textarea, button {
+    width: 100%; /* Mobilde tam genişlik */
+    margin: 5px 0;
+    padding: 12px; /* Giriş elemanlarını büyüt */
+    font-size: 14px; /* Yazı boyutunu arttır */
+}
+
+
+th, td {
+    font-size: 12px; /* Yazı boyutunu küçült */
+}
+
+.action-buttons {
+    flex-direction: column; /* Butonları dikey hizala */
+    gap: 5px;
+}
+
+.action-button {
+    font-size: 14px; /* Buton yazısını küçült */
+    padding: 10px;
+}
+
+
+    body {
+        line-height: 1.4; /* Satır aralığını sıklaştır */
+        padding: 20px;
+    }
+
+    .container {
+        padding: 10px;
+        margin: 0;
+        box-shadow: none; /* Gölgeyi kaldır */
+    }
+
+    input, textarea, button {
+        width: 100%; /* Mobilde tam genişlik */
+        margin: 5px 0;
+        padding: 12px; /* Giriş elemanlarını büyüt */
+        font-size: 14px; /* Yazı boyutunu arttır */
+    }
+
+
+    th, td {
+        font-size: 12px; /* Yazı boyutunu küçült */
+    }
+
+    .action-buttons {
+        flex-direction: column; /* Butonları dikey hizala */
+        gap: 5px;
+    }
+
+    .action-button {
+        font-size: 14px; /* Buton yazısını küçült */
+        padding: 10px;
+    }

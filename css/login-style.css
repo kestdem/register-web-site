@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+.container {
+    width: 300px;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+button {
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: #0056b3;
+}
+.switch {
+    margin-top: 10px;
+    text-align: center;
+    color: #007bff;
+    cursor: pointer;
+}
+
+.container {
+    position: relative; /* Konteynerin relative konumlandırılması, butonun pozisyonunu doğru ayarlamak için */
+}
+
+#backButton {
+    position: absolute; /* Form içinde mutlak konumlandırma */
+    top: 10px; /* Üstten mesafe */
+    right: 10px; /* Sağdan mesafe */
+    background-color: transparent; /* Şeffaf arka plan */
+    border: none; /* Kenarlıkları kaldır */
+    font-size: 24px; /* Ok simgesinin büyüklüğü */
+    color: #333; /* Simgelerin rengi */
+    cursor: pointer; /* Tıklanabilir işareti */
+}
+
+#backButton:hover {
+    color: #007bff; /* Hover efekti */
+}

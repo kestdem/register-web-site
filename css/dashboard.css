@@ -1,0 +1,138 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #ecf0f1;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar {
+    width: 100%;
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.content {
+    flex: 1;
+    background: #ecf0f1;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+header {
+    background: #3498db;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.stat {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.recent {
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.recent h2 {
+    margin-top: 0;
+}
+
+.recent ul {
+    list-style: none;
+    padding: 0;
+}
+
+.recent ul li {
+    margin: 10px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: #4a56db;
+    color: #fff;
+}
+
+/* Mobil uyumlu tasarım için medya sorguları */
+@media (min-width: 600px) {
+    body {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 200px;
+        text-align: left;
+    }
+
+    .stats {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .stat {
+        flex: 1;
+        margin: 0 10px;
+    }
+    
+    table {
+        display: block;
+        overflow-x: auto; /* Yatay kaydırma ekle */
+        white-space: nowrap;
+    }
+
+    th, td {
+        font-size: 12px; /* Yazı boyutunu küçült */
+    }
+}
