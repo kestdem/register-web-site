@@ -8,7 +8,9 @@ body {
 
 }
 
-
+.hidden{
+    display: none;
+}
 
 #create-class-btn{
     padding: 10px;
