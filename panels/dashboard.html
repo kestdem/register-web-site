@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- ===== BOX ICONS ===== -->
+        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+
+        <!-- ===== CSS ===== -->
+        <link rel="stylesheet" href="assets/css/styles.css">
+        <link rel="stylesheet" href="../css/dashboard.css">
+
+        <title>Yönetim Paneli</title>
+    </head>
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
+
+            <div class="header__img">
+               
+            </div>
+        </header>
+
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div>
+                    <a href="#" class="nav__logo" onclick="dashboardLoad()">
+                        <i class='bx bx-layer nav__logo-icon'></i>
+                        <span class="nav__logo-name">Yönetim Paneli</span>
+                    </a>
+
+                    <div class="nav__list">
+                        <a href="#"  class="nav__link active" onclick="loadStudent()">
+                        <i  class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name"  >Öğrenciler</span>
+                        </a>
+
+                        <a href="#" class="nav__link" onclick="loadUser()">
+                            <i class='bx bx-user nav__icon' ></i>
+                            <span class="nav__name" >Kullanıcılar</span>
+                        </a>
+                        
+                        <a href="#" class="nav__link" onclick="loadClass()">
+                            <i class='bx bx-message-square-detail nav__icon' ></i>
+                            <span class="nav__name" >Sınıflar</span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <a href="#" class="nav__link" onclick="logout()">
+                    <i class='bx bx-log-out nav__icon' ></i>
+                    <span class="nav__name" >Çıkış</span>
+                </a>
+            </nav>
+        </div>
+        <div class="content">
+            <div id="student-dashboard"class="hidden">
+                <table >
+                    <thead>
+                        <tr>
+                            <th>Seçim</th>
+                            <th>Sıra No</th>
+                            <th>Ad</th>
+                            <th>Soyadı</th>
+                            <th>Doğum Trh.</th>
+                            <th>Anne Adı</th>
+                            <th>Baba Adı</th>
+                            <th>Anne Tel</th>
+                            <th>Baba Tel</th>
+                            <th>İkamet Adresi</th>
+                            <th>Kayıt Tarihi</th>
+                            <th>Düzenleme</th>                                 
+                        </tr>
+                    </thead>
+                    <tbody id="students-table-body" ></tbody>
+                </table>
+                <button  id="create-class-btn" onclick="createClass()">Sınıf Oluştur</button>
+                <div id="classModal" class="hidden">
+                    <h3>Sınıf Seç</h3>
+                    <select id="classSelector">
+                        <!-- Dinamik sınıf listesi buraya eklenecek -->
+                    </select>
+                    <button id="confirmClassButton">Onayla</button>
+                </div>
+            </div>
+            
+    
+            <div id="class-dashboard" class="hidden">                 
+                <div id="class-container" ></div>
+            </div>
+    
+            <div id="user-dashboard" class="hidden">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Kullanıcı mail adresi</th>
+                            <th>Admin Yetkisi</th>
+                            <th>Kullanıcı Yetkisi</th>
+                            <th>Öğrentmen Yetkisi</th>
+                            <th>Sınıf Yetkisi</th>
+                            <th>Yetkilendirme</th>
+                            <th>Ytk Dusr</th>
+                            <th>Kullanc Sil</th>
+                        </tr>
+                    </thead>
+                    <tbody id="users-table-body"></tbody>
+                </table>
+    
+            </div>
+            
+            <div id="student-edit-form" class="form-container hidden">
+                <button id="backButton" onclick="loadStudent()" class="back-btn">&#8592;</button>
+                <h2>Öğrenci Kayıt</h2>
+                <form id="registration-form">
+                    <input type="text" id="student-name" placeholder="Öğrencinin Adı" required>
+                    <input type="text" id="student-surname" placeholder="Öğrencinin Soyadı" required>
+                    <input type="text" id="student-dob" placeholder="Doğum Tarihi" required>                           
+                    <input type="text" id="mother-name" placeholder="Anne Adı" required>
+                    <input type="text" id="father-name" placeholder="Baba Adı" required>
+                    <input type="text" id="mother-phone" placeholder="Anne Telefon Numarası" required>
+                    <input type="text" id="father-phone" placeholder="Baba Telefon Numarası" required>
+                    <textarea id="student-address" placeholder="İkamet Adresi" required></textarea>
+                    <input type="text" id="registration-date" placeholder="Kurs Kayıt Tarihi" required>
+                    <button type="submit">Kaydet</button>
+                </form>
+            </div>
+            <div id="dashboard-page" class="">
+                <div style="display: flex; justify-content: space-around; padding: 20px;">
+                    <!-- Öğrenci Sayısı -->
+                    <div id="student-count-panel" style="background: #2c3e50;border-radius: 8px; width: 45%; text-align: center; padding: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                        <h1>Öğrenci Sayısı</h1>
+                        <p id="student-count" style="font-size: 32px; font-weight: bold;">0</p>
+                    </div>
+            
+                    <!-- Sınıf Sayısı -->
+                    <div id="class-count-panel" style="background: #2c3e50; border-radius: 8px; width: 45%; text-align: center; padding: 20px; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+                        <h1>Sınıf Sayısı</h1>
+                        <p id="class-count" style="font-size: 32px; font-weight: bold;">0</p>
+                    </div>
+                </div>
+            </div>
+           
+    
+        </div>
+        <script type="module" src="../js/dashbard.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
